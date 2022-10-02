@@ -418,11 +418,19 @@ a:link {
   font-weight: 700;
   font-size: 20px;
   line-height: 120%;
-
   /* or 24px */
   text-align: center;
 
   color: #ffffff;
+  container-type: inline-zize;
+
+}
+
+
+@container (width:700px) {
+  .ourprocess-content .zaglavie {
+    color:red;
+  }
 }
 
 .ourprocess-content .paragraph {

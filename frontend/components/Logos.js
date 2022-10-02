@@ -7,6 +7,9 @@ export default function Logos() {
             <div className='container'>
               <div className='row'>
                 <div className='logo-placeholder'>Logos Here</div>
+                  <div class="slide">
+
+                  </div>
               </div>
             </div>
           </section>
