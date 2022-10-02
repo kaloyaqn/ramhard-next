@@ -5,8 +5,11 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import HeroTitle from './hero section/title.js'
-import faq from './faq.js'
 import whyus from './whyus.js'
+import services from './ourservices.js'
+import aboutme from './aboutme.js'
+import aboutus from './aboutus.js'
+import faq from './faq.js'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -15,6 +18,6 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    HeroTitle, whyus, faq
+    HeroTitle, whyus, services, aboutme, aboutus, faq, 
   ]),
 })

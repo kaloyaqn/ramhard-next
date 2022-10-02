@@ -1,17 +1,19 @@
-import Image from 'next/image'
-import PrimaryBtn from '../components/buttons/primaryBtn';
 import Hero from '../components/Hero';
 import Logos from '../components/Logos';
-import Navbar from '../components/Navbar';
+import Ourprocess from '../components/Ourprocess';
 import Why from '../components/Why';
+import Mainservices from '../components/Services';
+import Aboutus from '../components/Aboutus';
 
-export default function Home({title}) {
+export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero/>
       <Logos />
       <Why />
-      <PrimaryBtn />
+      <Mainservices/>
+      <Ourprocess />
+      <Aboutus />
     </>
   )
 }

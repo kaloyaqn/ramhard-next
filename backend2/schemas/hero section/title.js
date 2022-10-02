@@ -13,7 +13,12 @@ export default {
             name: "Description",
             title: "Описание",
             description: "Напишете описанието на заглавната секция",
-            type: "string"
+            type: "array",
+            of: [
+                {
+                    type: "block"
+                }
+            ]
         },
         {
             name: "Image",

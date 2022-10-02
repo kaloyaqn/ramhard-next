@@ -5,27 +5,32 @@ export default {
     fields: [
         {
             name: "Title_one",
-            title: "Залгавие на първата секция",
+            title: "Залгавие на секцията",
             type: "string"
         },
         {
             name: "Subtitle_one",
-            title: "Описание на първата секция",
+            title: "Описание на секцията",
             type: "string"
         },
         {
             name: "Title_two",
-            title: "Заглавие на втората секция",
+            title: "Заглавие на първата причина",
             type: "string"
         },
         {
             name: "Subtitle_two",
-            title: "Описание на втората секция",
-            type: "string"
+            title: "Описание на първата причина",
+            type: "array",
+            of: [
+                {
+                  type: 'block'
+                }
+            ]
         },
         {
             name: "Image_one",
-            title: "Снимка на втората секция",
+            title: "Снимка на първата причина",
             type: "image",
             options: {
                 hotspot: true
@@ -33,34 +38,44 @@ export default {
         }, 
         {
             name: "Title_three",
-            title: "Заглавие на третата секция",
+            title: "Заглавие на втората причина",
             type: "string"
         },
         {
             name: "Subtitle_three",
-            title: "Описание на третата секция",
-            type: "string"
+            title: "Описание на втората причина",
+            type: "array",
+            of: [
+                {
+                    type: "block"
+                }
+            ]
         },
         {
             name: "Image_two",
-            title: "Снимка на третата секция",
+            title: "Снимка на втората причина",
             type: "image",
             options: {
                 hotspot: true
             }
         },        {
             name: "Title_four",
-            title: "Заглавие на четвъртата секция",
+            title: "Заглавие на третата причина",
             type: "string"
         },
         {
             name: "Subtitle_four",
-            title: "Описание на четвъртата секция",
-            type: "string"
+            title: "Описание на третата причина",
+            type: "array",
+            of: [
+                {
+                    type: "block"
+                }
+            ]
         },
         {
             name: "Image_three",
-            title: "Снимка на четвъртата секция",
+            title: "Снимка на третата причина",
             type: "image",
             options: {
                 hotspot: true

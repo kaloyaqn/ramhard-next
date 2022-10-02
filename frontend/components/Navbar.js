@@ -1,5 +1,4 @@
-import { KurvaButon } from "./buttons/Button";
-
+import { KurvaButon, PriButton } from "./buttons/Button";
 
 export default function Navbar() {
     return (
@@ -30,7 +29,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <a href="#cta-down">
-                  <KurvaButon />
+                  <PriButton />
                 </a>
               </li>
             </ul>
