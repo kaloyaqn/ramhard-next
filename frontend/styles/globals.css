@@ -447,12 +447,14 @@ a:link {
 
   color: rgba(197, 209, 217, 0.63);
 }
-/*OurProcess End */
 
 .ourprocess {
   padding-bottom: 7.5rem;
 }
+/*OurProcess End */
 
+
+ /*About us Start */
 .aboutus-text-container {
   gap: 20px;
   align-items: center;
@@ -469,3 +471,78 @@ a:link {
   text-align: center;
   max-width: 631px;
 }
+/* About us End*/
+
+/*Faq Start */
+.faq h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 47px;
+  line-height: 120%;
+  /* or 56px */
+  text-align: center;
+  color: #FFFFFF;
+}
+.faq h1 span {
+  color: var(--ramhard-brand);
+}
+.faq .faq-container {
+  margin-top: 100px;
+}
+.faq .faq-container .accordion-item {
+  background: #313C42;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  /* or 25px */
+  border-top: 0;
+  color: rgba(187, 206, 198, 0.63);
+}
+.faq .accordion {
+  border-top: 0;
+}
+.faq .accordion-header {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  border: 0;
+  /* identical to box height, or 30px */
+  color: #FFFFFF;
+}
+.faq .accordion-button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  color: #FFFFFF;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.15);
+  background: #313C42;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color:transparent !important;
+}
+
+.faq .accordion-button:after {
+  /*background-image: url("http://wuu.tonev.design/ramhard-images/Images/faq-arrow.svg") !important; */
+}
+.faq .panel, .faq .panel-group .panel-heading + .panel-collapse > .panel-body {
+  border: none;
+  border-top: 0;
+}
+.faq .accordion-flush .accordion-item {
+  border-right: 0 !important;
+  border-left: 0;
+  border-radius: 0;
+  border-bottom-color: #313C42;
+  border-top: 0;
+}
+
+/*Faq End */
