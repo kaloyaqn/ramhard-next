@@ -1,34 +1,39 @@
 import Script from 'next/script'
+import { useState } from "react";
+import { useEffect } from "react";
+import { urlFor, client } from "../pages/client";
+import { PortableText } from "@portabletext/react";
 
-/**
- * 
- * 
- *  <section className='logos slider'>
-            <div className='container'>
-              <div className='row'>
-                <div className='logo-placeholder'>
-                <div class="slide"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"/></div>
-                </div>
-              </div>
-            </div>
-          </section>
-
- */
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame
+} from "framer-motion";
+import { wrap } from "@motionone/utils";
 
 export default function Logos() {
+  const [logo, setLogo] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "logos"]';
+
+    client.fetch(query).then((data) => setLogo(data));
+  }, []);
+
     return (
         <>
-        <Script>        
-        </Script>
-          <section className='logo-carousel slide'>
-            <div className='container'>
-              <div className='row'>
-                <div className='logo-placeholder'>
-                  <div className="slide"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png" /></div>
-                </div>
-              </div>
+          <div className='carousel'>
+            <div className='carousel__slider'>
+              <ul className='carousel__list'>
+
+              </ul>
             </div>
-          </section>
+          </div>
         </>
     )
 }
