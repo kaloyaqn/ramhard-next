@@ -474,6 +474,10 @@ a:link {
 /* About us End*/
 
 /*Faq Start */
+.faq {
+  padding-top: 7.5rem;
+}
+
 .faq h1 {
   font-family: "Inter";
   font-style: normal;
@@ -488,7 +492,7 @@ a:link {
   color: var(--ramhard-brand);
 }
 .faq .faq-container {
-  margin-top: 100px;
+  padding-top: 3rem;
 }
 .faq .faq-container .accordion-item {
   background: #313C42;
@@ -528,6 +532,7 @@ a:link {
 
 .accordion-button:not(.collapsed) {
   background-color:transparent !important;
+  box-shadow: #313C42 #313C42 #313C42 #313C42;
 }
 
 .faq .accordion-button:after {

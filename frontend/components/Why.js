@@ -31,7 +31,7 @@ export default function Why() {
             <div className="kukimuki">
               <div className="row">
                 <div className="col-md-5 col-12 order-2">
-                  <div className="why-section-text-container">
+                  <div className="why-section-text-container d-flex justify-content-center">
                     <span>{whyus.Title_two.slice(0, 1)}</span>
                     <h2>{whyus.Title_two}</h2>
                     <PortableText value={whyus.Subtitle_two} />
@@ -57,7 +57,7 @@ export default function Why() {
                 <div className="col-md-1 col-12"></div>
                 <div className="col-md-6 col-12 order-2">
                   <img
-                    src={urlFor(whyus.Image_one)}
+                    src={urlFor(whyus.Image_two)}
                     className="img-fluid"
                     alt="Защо да изберете нас първа снимка"
                   />
@@ -65,7 +65,7 @@ export default function Why() {
               </div>
               <div className="row">
                 <div className="col-md-5 col-12 order-2">
-                  <div className="why-section-text-container">
+                  <div className="why-section-text-container d-flex ">
                     <span>{whyus.Title_four.slice(1, 3)}</span>
                     <h2>{whyus.Title_four}</h2>
                     <PortableText value={whyus.Subtitle_four} />
@@ -74,7 +74,7 @@ export default function Why() {
                 <div className="col-md-1 col-12"></div>
                 <div className="col-md-6 col-12 order-1">
                   <img
-                    src={urlFor(whyus.Image_one)}
+                    src={urlFor(whyus.Image_three)}
                     className="img-fluid"
                     alt="Защо да изберете нас първа снимка"
                   />
