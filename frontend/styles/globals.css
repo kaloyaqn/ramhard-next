@@ -504,7 +504,7 @@ a:link {
   line-height: 140%;
   /* or 25px */
   border-top: 0;
-  color: rgba(187, 206, 198, 0.63);
+  color: #c5d1d9
 }
 .faq .accordion {
   border-top: 0;
@@ -534,10 +534,18 @@ a:link {
 .accordion-button:not(.collapsed) {
   background-color:transparent !important;
   box-shadow: #313C42 #313C42 #313C42 #313C42;
+  color: var(--ramhard-brand);
 }
 
+.accordion-button:focus {
+  border-color: none !important;
+  outline: 0;
+  box-shadow:none !important;
+}
+
+
 .faq .accordion-button:after {
-  /*background-image: url("http://wuu.tonev.design/ramhard-images/Images/faq-arrow.svg") !important; */
+  background-image: url("../Images/arrow.svg") !important; 
 }
 .faq .panel, .faq .panel-group .panel-heading + .panel-collapse > .panel-body {
   border: none;
@@ -549,6 +557,10 @@ a:link {
   border-radius: 0;
   border-bottom-color: #313C42;
   border-top: 0;
+}
+
+.accordion {
+  --bs-accordion-border-color: #313C42 !important;
 }
 
 /*Faq End */
