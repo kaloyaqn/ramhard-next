@@ -2,12 +2,7 @@ export default {
     name: "faq",
     title: "Често задавани въпроси",
     type: "document",
-    fields: [
-        {
-            name: "Title",
-            title: "Заглавие на секция",
-            type: "string",
-        },
+    fields: [    
         {
             name: "Q_one",
             title: "Въпрос 1",

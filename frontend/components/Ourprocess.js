@@ -1,4 +1,4 @@
-import { useState } from "react";
+                                                                                            import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor, client } from "../pages/client";
 import { PortableText } from "@portabletext/react";
@@ -15,7 +15,7 @@ export default function Ourprocess() {
   return (
     <>
       {process.map((oProcess, index) => (
-        <section className="ourprocess">
+        <section key={index} className="ourprocess">
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-12 text-center d-flex flex-column section-text-container">
@@ -30,10 +30,10 @@ export default function Ourprocess() {
                 <div className="ourprocess-content d-flex flex-column ">
                   <span className="one">1</span>
                   <div className="zaglavie">
-                    <PortableText className="zaglavie" value={oProcess.Arg_three}/>
+                    <PortableText className="zaglavie" value={oProcess.Arg_one}/>
                   </div>
                   <div className="paragraph">
-                    <PortableText className="paragraph" value={oProcess.Desc_arg_two}/>
+                    <PortableText className="paragraph" value={oProcess.Desc_arg_one}/>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@ export default function Ourprocess() {
                 <div className="ourprocess-content d-flex flex-column ">
                   <span className="two">2</span>
                   <div className="zaglavie">
-                    <PortableText className="zaglavie" value={oProcess.Arg_three}/>
+                    <PortableText className="zaglavie" value={oProcess.Arg_two}/>
                   </div>
                   <div className="paragraph">
                     <PortableText className="paragraph" value={oProcess.Desc_arg_two}/>
@@ -57,7 +57,7 @@ export default function Ourprocess() {
                     <PortableText className="zaglavie" value={oProcess.Arg_three}/>
                   </div>
                   <div className="paragraph">
-                    <PortableText className="paragraph" value={oProcess.Desc_arg_two}/>
+                    <PortableText className="paragraph" value={oProcess.Desc_arg_three}/>
                   </div>
                 </div>
               </div>

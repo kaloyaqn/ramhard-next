@@ -4,11 +4,6 @@ export default {
     type: "document",
     fields: [
         {
-            name: "Title",
-            title: "Заглавие",
-            type: "string"
-        },
-        {
             name: "Description",
             title: "Описание",
             type: "string"

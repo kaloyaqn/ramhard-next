@@ -1,4 +1,4 @@
-import Hero from '../components/Hero';
+import Hero from '../components/Hero.js';
 import Logos from '../components/Logos';
 import Ourprocess from '../components/Ourprocess';
 import Why from '../components/Why';
@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <div className='overflow-hidden'>
         <Hero/>
-        <Logos />
+        
         <Why />
         <Mainservices/>
         <Ourprocess />

@@ -15,7 +15,7 @@ export default function Faq() {
     return (
       <>
       {question.map((Faq, index) => (        
-        <div id="faq" class="faq">
+        <div key={index} id="faq" class="faq">
           <div class="container">
             <div class="row">
               <div data-aos="zoom-in-down" class="col aos-init aos-animate">

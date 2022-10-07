@@ -3,11 +3,6 @@ export default {
     title: "За нас",
     type: "document",
     fields: [
-        {   
-            name: "About_title",
-            title: "Заглавие на информацията относно сервиза",
-            type: "string"
-        },
         {
             name: "About_desc",
             title: "Описание на информацията относно сервиза",
@@ -19,9 +14,14 @@ export default {
             ]
         },
         {
-            name: "About_button_name",
-            title: "Име на бутона",
-            type: "string"
+            name: "About_more",
+            title: "Повече информация",
+            type: "array",
+            of: [
+                {
+                    type: "block"
+                }
+            ]
         }
     ]
 }

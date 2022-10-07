@@ -1,14 +1,8 @@
 export default {
     name: "hero_title",
-    title: "Hero",
+    title: "Начална секция",
     type: "document",
     fields: [
-        {
-            name: "Title",
-            title: "Заглавие",
-            description: "Напиеште заглавието на заглавната секция",
-            type: "string",            
-        },
         {
             name: "Description",
             title: "Описание",

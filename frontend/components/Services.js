@@ -42,6 +42,14 @@ export default function Mainservices() {
         },
       },
       {
+        breakpoint: 576,
+        settings: {
+          slidesToShow:3,
+          slidesToScroll:2,
+          arrows: false,
+        },
+      },
+      {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
@@ -65,7 +73,7 @@ export default function Mainservices() {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       {service.map((Services, index) => (
-      <section className="uslugi">
+      <section key={index} className="uslugi">
         <div className="container">
           <div className="row">
             <div className="col-md-12 col-12 text-center d-flex flex-column ulugi-text-container">
