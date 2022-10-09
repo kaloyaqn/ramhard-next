@@ -3,19 +3,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor, client } from "../pages/client";
 import { PortableText } from "@portabletext/react";
-import $ from 'jquery'
-
 import { useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useMotionValue,
-  useVelocity,
-  useAnimationFrame
-} from "framer-motion";
-import { wrap } from "@motionone/utils";
+import React, { Component } from "react";
+import Slider from "react-slick";
+import apple from "../Images/Logos/apple.svg"
 
 export default function Logos() {
   const [logo, setLogo] = useState([]);
@@ -24,88 +15,62 @@ export default function Logos() {
     const query = '*[_type == "logos"]';
 
     client.fetch(query).then((data) => setLogo(data));
-  }, []);
+  }, []);    
 
-      
-    
-function slide() {
-  $('.logo-carousel').slick({
+  const settings = {
     slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    arrows: true,
-    dots: false,
-    pauseOnHover: false,
-    responsive: [{
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 4
-      }
-    }, {
-      breakpoint: 520,
-      settings: {
-        slidesToShow: 2
-      }
-    }]
-  });
-}
-
-
+      slidesToScroll: 1,
+      autoplaySpeed: 1000,
+      arrows: true,
+      dots: false,
+      pauseOnHover: false,
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4
+        }
+      }, {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+  };
 
     return (
       <>
-      <script>
-      var jsdom = require('jsdom');
-      $ = require('jquery')(new jsdom.JSDOM().window);
-      $(document).ready(function() {
-        slide()
-      };
-      </script>
-        <div className="carousel">
-          <div className="carousel__slider">
-            <ul className="carousel__list">
-              <div class="slide">
-                <img
-                  src="https://i49.vbox7.com/i/d6b/d6b81225a06.jpg"
-                  height="100"
-                  width="150"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://i49.vbox7.com/i/d6b/d6b81225a06.jpg"
-                  height="100"
-                  width="150"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://i49.vbox7.com/i/d6b/d6b81225a06.jpg"
-                  height="100"
-                  width="150"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://i49.vbox7.com/i/d6b/d6b81225a06.jpg"
-                  height="100"
-                  width="150"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://i49.vbox7.com/i/d6b/d6b81225a06.jpg"
-                  height="100"
-                  width="150"
-                  alt=""
-                />
-              </div>
-            </ul>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
+        <div className="logos">
+          <div className="slider">
+              <Slider className="slide-track" {...settings}>
+                <div className="slide">
+                  <img src="http://wuu.tonev.design/ramhrard-desktop/Images/logos/apple.svg"/>
+                </div>
+                <div className="slide">
+                  <img src="http://wuu.tonev.design/ramhrard-desktop/Images/logos/apple.svg"/>
+                </div>
+                <div className="slide">
+                  <img src="http://wuu.tonev.design/ramhrard-desktop/Images/logos/apple.svg"/>
+                </div>
+                <div className="slide">
+                  <img src="http://wuu.tonev.design/ramhrard-desktop/Images/logos/apple.svg"/>
+                </div>
+                <div className="slide">
+                  <img src="http://wuu.tonev.design/ramhrard-desktop/Images/logos/apple.svg"/>
+                </div>
+                
+               
+              </Slider>              
           </div>
         </div>
       </>

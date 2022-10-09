@@ -18,7 +18,7 @@ export default function Faq() {
         <div key={index} id="faq" class="faq">
           <div class="container">
             <div class="row">
-              <div data-aos="zoom-in-down" class="col aos-init aos-animate">
+              <div data-aos="fade-down" class="col aos-init aos-animate">
                 <h1>
                   Често задавани <br />
                   <span>въпроси</span>

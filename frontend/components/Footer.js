@@ -1,5 +1,6 @@
 import tiktok from "../Images/socials/tiktok.svg"
 import facebook from "../Images/socials/facebook.svg"
+import { urlFor, client } from "../pages/client";
 
 export default function Footer() {
     return (

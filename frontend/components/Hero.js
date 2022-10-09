@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { urlFor, client } from "../pages/client";
 import React from "react";
 import Image from "next/image";
-import Kurva, { KurvaButon, PriButton } from "./buttons/Button";
+import { PriButton } from "./buttons/Button";
 import { ButtonSec } from "./buttonSec/ButtonSec";
 import facebook from "../Images/socials/facebook.svg";
 import tiktok from "../Images/socials/tiktok.svg";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
 
 
@@ -41,7 +41,7 @@ export default function Hero() {
   }
 
   return (
-    <>
+    <>      
       {title.map((Htitle, index) => (
         <section key={index} className="hero">
           <div className="container">
@@ -91,3 +91,4 @@ export default function Hero() {
     </>
   );
 }
+

@@ -5,6 +5,8 @@ import { PortableText } from "@portabletext/react";
 import { AboutButton } from "../components/buttons/AboutButton";
 import $ from "jquery";
 import React from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default function Aboutus() {
   const [about, setAbout] = useState([]);
@@ -15,13 +17,14 @@ export default function Aboutus() {
     client.fetch(query).then((data) => setAbout(data));
   }, []);
 
-  const ReadMore = ({ children }) => {
+    const ReadMore = ({ children }) => {
     const text = children;
     const [isReadMore, setIsReadMore] = useState(true);
 
     const toggle = () => {
       setIsReadMore(!isReadMore);
     };
+
 
     return (
       <p className="text">
@@ -39,6 +42,11 @@ export default function Aboutus() {
     );
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
+
   return (
     <>
       {about.map((About, index) => (
@@ -46,10 +54,10 @@ export default function Aboutus() {
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-12 section-text-container text-center d-flex flex-column aboutus-text-container">
-                <h1 className="section-title">
+                <h1 data-aos="fade-down" className="section-title">
                   За <span className="brand-span">Ramhard</span>
                 </h1>
-                <div className="section-subtitle">
+                <div data-aos="fade-up" className="section-subtitle">
                   <ReadMore></ReadMore>
                 </div>
               </div>

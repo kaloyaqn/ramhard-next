@@ -5,7 +5,9 @@ import { urlFor, client } from "../pages/client";
 import { PortableText } from "@portabletext/react";
 import Slider from "react-slick";
 import Image from "next/image";
-import telefon from "../Images/telefon.png";
+import telefon from "../Images/telefon.png"
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 export default function Mainservices() {
   const [service, setService] = useState([]);
@@ -59,6 +61,10 @@ export default function Mainservices() {
     ],
   };
 
+  useEffect(() => {
+    AOS.init();
+  })
+
   return (
     <>      
       <link
@@ -76,7 +82,7 @@ export default function Mainservices() {
       <section key={index} className="uslugi">
         <div className="container">
           <div className="row">
-            <div className="col-md-12 col-12 text-center d-flex flex-column ulugi-text-container">
+            <div data-aos="fade-up" className="col-md-12 col-12 text-center d-flex flex-column ulugi-text-container">
               <h1 className="section-title">
                 Нашите <span className="brand-span">услуги</span>
               </h1>
@@ -87,7 +93,7 @@ export default function Mainservices() {
           </div>
           <div className="row">
             <Slider className="" {...settings}>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="200" className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
@@ -95,7 +101,7 @@ export default function Mainservices() {
                   </p>
                 </div>
               </div>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="300" className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
@@ -103,7 +109,7 @@ export default function Mainservices() {
                   </p>
                 </div>
               </div>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="400" className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
@@ -111,7 +117,7 @@ export default function Mainservices() {
                   </p>
                 </div>
               </div>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="500" className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
@@ -119,7 +125,7 @@ export default function Mainservices() {
                   </p>
                 </div>
               </div>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="600" className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
@@ -127,7 +133,7 @@ export default function Mainservices() {
                   </p>
                 </div>
               </div>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="700"  className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
@@ -135,7 +141,7 @@ export default function Mainservices() {
                   </p>
                 </div>
               </div>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="800"  className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
@@ -143,7 +149,7 @@ export default function Mainservices() {
                   </p>
                 </div>
               </div>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="500"  className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
@@ -151,7 +157,7 @@ export default function Mainservices() {
                   </p>
                 </div>
               </div>
-              <div className="services-slider-container">
+              <div data-aos="fade-up" data-aos-duration="500" className="services-slider-container">
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>

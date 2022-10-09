@@ -29,6 +29,23 @@ a {
   text-decoration: none;
 }
 
+.page-404 h1 {
+  max-width: 426px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: var(--font-size-lg);
+  text-align: center;
+  
+  color: #FFFFFF;
+  
+}
+
+.page-404 b {
+  font-weight: 600;
+}
+
 /*Navbar Start */
 
 header {
@@ -62,6 +79,10 @@ header {
   font-size: var(--font-size-base);
   line-height: 40px;
   margin-right: 2rem;
+}
+
+.dropdown-toggle::after {
+  color: var(--ramhard-brand)!important;
 }
 
 .navbar .nav-item .nav-link:hover {
@@ -104,6 +125,14 @@ a:link {
 }
 
 /* Hero Start*/
+
+.mouse-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 * {
   margin: 0;
@@ -184,25 +213,68 @@ a:link {
 
 /* Logo Slider Start */
 .logos {
-  margin-top: 4rem;
   width: 100%;
-  background: darkblue;
-  height: 100px;
 }
 
-.logo-placeholder {
-  width: 100%;
-  height: 100px;
-  background: darkred;
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  font-family: "Poppins";
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 7.5rem;
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
+}
+.slider {
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider::before, .slider::after {
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+
+
+.slider .slide {
+  height: 50px;
+  width: 100px;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+          animation: scroll 40s linear infinite;
+  display: flex;
+  width: 3500px;
+}
+.slider .slide {
+  height: 50vh;
+  width: 150vw;
+}
+
 /* Logo Slider End */
 
 .section-title {
@@ -426,6 +498,8 @@ a:link {
   padding: 20px 28px 20px 28px;
 }
 
+
+
 .ourprocess-content .zaglavie {
   font-family: "Inter";
   font-style: normal;
@@ -434,7 +508,7 @@ a:link {
   line-height: 120%;
   /* or 24px */
   text-align: center;
-  max-width: 300px;
+  max-width: 300;
   color: #ffffff;
   container-type: inline-zize;
 
@@ -763,7 +837,7 @@ footer .footer-divider {
   }
 
   .hero {
-    margin-top: 4rem;
+    margin-top: 7.75rem;
     padding-bottom: 0px;
   }
 

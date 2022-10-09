@@ -16,17 +16,29 @@ export default function Navbar() {
                 <a className="nav-link " href="#hero">Начало</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#why">Защо нас ?</a>
+                <a className="nav-link" href="#why">Защо нас?</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#process">Процес</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#about">За мен</a>
+                <a className="nav-link" href="#about">За нас</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#faq">ЧЗВ</a>
               </li>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Език
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">E.C.C.C</a></li>
+                <li><a class="dropdown-item" href="#">shanadjii</a></li>
+                <li><hr  class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Kasata</a></li>
+              </ul>
+            </li>
+
               <li className="nav-item">
                 <a href="#cta-down">
                   <PriButton />

@@ -1,12 +1,14 @@
 import sanityClient from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
+import { createClient } from "next-sanity"
+
 //import createPortableTextComponent from '@sanity/portable-text-editor'
 
 export const client = sanityClient({
     projectId: 'bc5owe4x',
     dataset: 'production',
-    apiVersion: '2022-02-01',
-    useCdn: false,
+    apiVersion: '2022-03-10',
+    useCdn: true,
     token: 'skWbipqk01RrdAVqfGVnv4WyakOj412DhXs1h1TyC3fYkS8CD6wVavP2EfbggEx0sF0dERq0KHK964D1ge27HFq3cnsZvArTs7k07M8X6poz1y8bOIle5aod1vu91wW8H0mP1ymyvGMKL8Zq9yCLcQjfNPE1diuS6x8rMjmV4JbpqRpVe7Op',
 });
 
@@ -17,4 +19,11 @@ export const urlFor = (source) => builder.image(source);
 /*export const PortableText = createPortableTextComponent({
     ...client,
     serializers: {},
-});*/
+});*/   
+
+export default function Client() {
+    return (
+        <>
+        </>
+    )
+}
