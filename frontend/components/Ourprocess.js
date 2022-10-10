@@ -1,26 +1,20 @@
-                                                                                            import { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor, client } from "../pages/client";
 import { PortableText } from "@portabletext/react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function Ourprocess() {
-  const [process, setProcess] = useState([]);
-
+export default function Ourprocess({arg}) {
   useEffect(() => {
-    const query = '*[_type == "ourprocess"]';
-
-    client.fetch(query).then((data) => setProcess(data));
-  }, []);
-
-  useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once:true
+    });
   }, [])
 
   return (
     <>
-      {process.map((oProcess, index) => (
+      {arg.oproc_data?.map((oProcess, index) => (
         <section key={index} className="ourprocess">
           <div className="container">
             <div className="row">

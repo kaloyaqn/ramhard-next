@@ -7,16 +7,7 @@ import { useInView } from "react-intersection-observer";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function Why() {
-  const [why, setWhy] = useState([]);
-
-  useEffect(() => {
-    const query = '*[_type == "whyus"]';
-
-    client.fetch(query).then((data) => setWhy(data));
-  }, []);
-
-
+export default function Why({arg}) {
   //animaciiki
 
   const Variants = {
@@ -57,12 +48,14 @@ export default function Why() {
   }, [controls, inView]);
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once:true
+    });
   }, [])
 
   return (
     <>
-      {why.map((whyus, index) => (
+      {arg.whyus_data?.map((whyus, index) => (
         <section key={index} className="why">
           <div className="container">
             <div className="row">

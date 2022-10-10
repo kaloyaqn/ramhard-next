@@ -9,17 +9,10 @@ import telefon from "../Images/telefon.png"
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 
-export default function Mainservices() {
-  const [service, setService] = useState([]);
-
-  useEffect(() => {
-    const query = '*[_type == "services"]';
-
-    client.fetch(query).then((data) => setService(data));
-  }, []);
-
+export default function Mainservices({arg}) {
   const settings = {
     dots: false,
+    arrows: true,
     infinite: false,
     speed: 500,
     slidesToShow: 7,
@@ -62,7 +55,9 @@ export default function Mainservices() {
   };
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once:true
+    });
   })
 
   return (
@@ -78,7 +73,7 @@ export default function Mainservices() {
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-      {service.map((Services, index) => (
+      {arg.service_data?.map((Services, index) => (
       <section key={index} className="uslugi">
         <div className="container">
           <div className="row">
@@ -97,47 +92,47 @@ export default function Mainservices() {
                 <div className="slider-content">
                   <img src={urlFor(Services.Image_one)} />
                   <p>
-                    Смяна на <br /> дисплей
+                    {Services.Service_one}
                   </p>
                 </div>
               </div>
               <div data-aos="fade-up" data-aos-duration="300" className="services-slider-container">
                 <div className="slider-content">
-                  <img src={urlFor(Services.Image_one)} />
+                  <img src={urlFor(Services.Image_two)} />
                   <p>
-                    Смяна на <br /> дисплей
+                    {Services.Service_two}
                   </p>
                 </div>
               </div>
               <div data-aos="fade-up" data-aos-duration="400" className="services-slider-container">
                 <div className="slider-content">
-                  <img src={urlFor(Services.Image_one)} />
+                  <img src={urlFor(Services.Image_three)} />
                   <p>
-                    Смяна на <br /> дисплей
+                    {Services.Service_three}
                   </p>
                 </div>
               </div>
               <div data-aos="fade-up" data-aos-duration="500" className="services-slider-container">
                 <div className="slider-content">
-                  <img src={urlFor(Services.Image_one)} />
+                  <img src={urlFor(Services.Image_four)} />
                   <p>
-                    Смяна на <br /> дисплей
+                    {Services.Service_four}
                   </p>
                 </div>
               </div>
               <div data-aos="fade-up" data-aos-duration="600" className="services-slider-container">
                 <div className="slider-content">
-                  <img src={urlFor(Services.Image_one)} />
+                  <img src={urlFor(Services.Image_five)} />
                   <p>
-                    Смяна на <br /> дисплей
+                    {Services.Service_five}
                   </p>
                 </div>
               </div>
               <div data-aos="fade-up" data-aos-duration="700"  className="services-slider-container">
                 <div className="slider-content">
-                  <img src={urlFor(Services.Image_one)} />
+                  <img src={urlFor(Services.Image_six)} />
                   <p>
-                    Смяна на <br /> дисплей
+                    {Services.Service_six}
                   </p>
                 </div>
               </div>

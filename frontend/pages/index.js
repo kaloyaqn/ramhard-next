@@ -7,75 +7,72 @@ import Aboutus from '../components/Aboutus';
 import Faq from '../components/Faq';
 import LastCta from '../components/LastCta';
 import Maps from '../components/Maps';
-
 import { client } from "../pages/client";
 
-/*
-export async function getServerSideProps() {
-  const hero_query = '*[_type == "hero_title"]';
-  const hero_data = await client.fetch(hero_query);
-
-  console.log(hero_query);
-  console.log(hero_data)
-
-  return {
-    props: { hero_data }
-  };
-
-}*/
-
-export default function Home() {
+export default function Home(props) {
   return (
     <>
-      <div className='overflow-hidden'>
-        <Hero/>
+        <div className='overflow-hidden'>
+        <Hero arg={props.hero}/>
         <Logos/>
-        <Why />
-        <Mainservices/>
-        <Ourprocess />
-        <Aboutus />
-        <Faq />
-        <LastCta />
-        <Maps />
-      </div>
+        <Why arg={props.why}/>
+        <Mainservices arg={props.serv}/>
+        <Ourprocess arg={props.proc}/>
+        <Aboutus arg={props.about}/>
+        <Faq arg={props.faq}/>
+        <LastCta arg={props.cta}/>
+        <Maps /> {/*tova*/}
+        </div>
     </>
   )
 }
 
+export async function getServerSideProps() {
+  const hero_query = '*[_type == "hero_title"]';
+  const hero_data = await client.fetch(hero_query);
 
-/*
-export const getServerSideProps = async (context) => {
-  const query = encodeURIComponent(`*[ _type == "post" ]`);
-  const url = `${process.env.SANITY_URL}query=${query}`;  const data = await fetch(url).then((res) => res.json());
-  const posts = data.result;  if (!posts || !posts.length === 0) {
-    return {
-      props: {
-        posts: [],
+  const whyus_query = '*[_type == "whyus"]';
+  const whyus_data = await client.fetch(whyus_query);
+
+  const service_query = '*[_type == "services"]';
+  const service_data = await client.fetch(service_query);
+
+  const oproc_query = '*[_type == "ourprocess"]';
+  const oproc_data = await client.fetch(oproc_query);
+
+  const about_query = '*[_type == "aboutus"]';
+  const about_data = await client.fetch(about_query);
+
+  const faq_query = '*[_type == "faq"]';
+  const faq_data = await client.fetch(faq_query);
+
+  const cta_query = '*[_type == "cta"]';
+  const cta_data = await client.fetch(cta_query);
+
+  return {
+    props: { 
+      hero: {
+        hero_data
       },
-    };
-  } else {
-    return {
-      props: {
-        posts,
+      why: {
+        whyus_data
       },
-    };
-}*/
-
-/*
-export const getServerSideProps = async () => {
-  const query = `*[ _type == "hero_title"]`;
-
-  const recipe = await client.fetch(query);
-
-  console.log(recipe);
-
-  if (!recipe) return { props: null, notFound: true };
-  else
-    return {
-      props: {
-        recipe
+      serv: {
+        service_data
       },
-    };
-};
-*/
+      proc: {
+        oproc_data
+      },
+      about: {
+        about_data
+      },
+      faq: {
+        faq_data
+      },
+      cta: {
+        cta_data
+      }
+    },
+  };
+}
 

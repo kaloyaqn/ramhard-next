@@ -11,49 +11,32 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
-export default function Hero() {
-  const [title, setTitle] = useState([]);
+export default function Hero({arg}) {
 
   useEffect(() => {
-    const query = '*[_type == "hero_title"]';
-
-    client.fetch(query).then((data) => setTitle(data));
-  }, []);
-  //animaciiki
-  const [move, setMove] = React.useState(false);
-  
-  const WhyCards = {
-    offscreen: {
-      y:3000
-    },
-    onscreen: {
-      y:50,
-      rotate: -10,
-      transition: {
-        type:"spring",
-        bounce: 0.4,
-        duration: 0.8
-
-      }
-    }
-  }
+    AOS.init({
+      once:true
+    })
+  })
 
   return (
     <>      
-      {title.map((Htitle, index) => (
+      {arg.hero_data.map((Htitle, index) => (
         <section key={index} className="hero">
           <div className="container">
             <div className="row">
-              <div className="col-lg-7 col-md-12 col-12 hero-container">
+              <div data-aos="fade-right" className="col-lg-7 col-md-12 col-12 hero-container">
                 <motion.div 
                   className="hero-container"
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{ once: true, amount: 0.8 }}
-               
+                  viewport={{ once: true, amount: 0.8 }}               
                 >
+
                   <h1 className="heading">
                     Помагаме за <span className="brand-span">ремонта </span>
                     на вашия смартфон или таблет.
@@ -61,27 +44,53 @@ export default function Hero() {
                   <PortableText value={Htitle.Description} />
 
                   <div className="btn-container">
-                    <PriButton />
+                    <motion.div
+                    whileHover={{scale: 1.1}}
+                    whileTap={{scale: 0.9}}
+                    transition={{type: "spring", stiffness:400, damping:17}}
+                    >
+                      <PriButton />
+                    </motion.div>
+                    <motion.div
+                    whileHover={{scale:1.1}}
+                    whileTap={{scale: 0.9}}
+                    transition={{type: "spring", stiffness: 400, damiping: 17}}
+                    >
                     <ButtonSec />
+                    </motion.div>
                   </div>
                   <div className="socials-container">
                     <Link href="https://www.tiktok.com/@plamenbogutliev">
-                      <div className="socials">
-                        <Image src={tiktok} />
-                        <span>Tiktok</span>
-                      </div>
+                        <motion.div
+                             whileHover={{ scale: 1.1 }}
+                             whileTap={{ scale: 0.9 }}
+                             transition={{ type: "spring", stiffness: 400, damping: 17 }}                           
+                        >
+
+                            <div className="socials">
+                              <Image src={tiktok} />
+                            <span>Tiktok</span>
+                          </div>
+                        </motion.div>
                     </Link>
 
                     <Link href="https://www.facebook.com/www.ramhard.net">
+                      <motion.div
+                             whileHover={{ scale: 1.1 }}
+                             whileTap={{ scale: 0.9 }}
+                             transition={{ type: "spring", stiffness: 400, damping: 17 }}                           
+                      >
+
                       <div className="socials">
                         <Image src={facebook} />
                         <span>Facebook</span>
                       </div>
+                      </motion.div>
                     </Link>
                   </div>
                 </motion.div>
               </div>
-              <div className="col-lg-5 col-sm-12 col-12 hero_image_container">
+              <div data-aos="fade-left" className="col-lg-5 col-sm-12 col-12 hero_image_container">
                 <img className="img-fluid test" src={urlFor(Htitle.Image)} />
               </div>
             </div>

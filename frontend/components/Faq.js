@@ -2,20 +2,21 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor, client } from "../pages/client";
 import { PortableText } from "@portabletext/react";
+import AOS from 'aos'
 
-export default function Faq() {
-  const [question, setQuestion] = useState([]);
+export default function Faq({arg}) {
 
   useEffect(() => {
-    const query = '*[_type == "faq"]';
+    AOS.init({
+      once:true
+    })
+  }, [])
 
-    client.fetch(query).then((data) => setQuestion(data));
-  }, []);
 
     return (
       <>
-      {question.map((Faq, index) => (        
-        <div key={index} id="faq" class="faq">
+      {arg.faq_data?.map((Faq, index) => (        
+        <section key={index} id="faq" class="faq">
           <div class="container">
             <div class="row">
               <div data-aos="fade-down" class="col aos-init aos-animate">
@@ -150,7 +151,7 @@ export default function Faq() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
         ))}
       </>
     );

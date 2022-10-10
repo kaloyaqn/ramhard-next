@@ -71,6 +71,11 @@ header {
   color: var(--ramhard-brand);
 }
 
+.dropdown-menu {
+  background-image: url("http://www.bulgarianhistory.org/wp-content/uploads/2015/12/Paisiy1-300x300.jpg") !important;
+  border: none;
+}
+
 .navbar .nav-item .nav-link {
   color: var(--ramhard-white);
   font-family: "Inter";
@@ -212,67 +217,42 @@ a:link {
 /* Hero End */
 
 /* Logo Slider Start */
-.logos {
-  width: 100%;
-}
-
-
-@-webkit-keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-1750px);
-  }
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-1750px);
-  }
-}
-.slider {
-  height: 100px;
-  margin: auto;
+.container {
   overflow: hidden;
-  position: relative;
+}
+.container .slider {
+  animation: slidein 30s linear infinite;
+  white-space: nowrap;
+}
+.container .slider .logos {
   width: 100%;
+  display: inline-block;
+  margin: 0px 0;
 }
-.slider::before, .slider::after {
-  content: "";
-  height: 100px;
-  position: absolute;
-  width: 200px;
-  z-index: 2;
+.container .slider .logos .fab {
+  color: white;
+  width: calc(100% / 11);
+  animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+@keyframes slidein {
+  from {
+    transform: translate3d(0, 0, 0);
+ }
+  to {
+    transform: translate3d(-100%, 0, 0);
+ }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+ }
+  100% {
+    opacity: 1;
+ }
 }
 
-
-
-.slider .slide {
-  height: 50px;
-  width: 100px;
-}
-.slider::after {
-  right: 0;
-  top: 0;
-  transform: rotateZ(180deg);
-}
-.slider::before {
-  left: 0;
-  top: 0;
-}
-.slider .slide-track {
-  -webkit-animation: scroll 40s linear infinite;
-          animation: scroll 40s linear infinite;
-  display: flex;
-  width: 3500px;
-}
-.slider .slide {
-  height: 50vh;
-  width: 150vw;
+.logos-container {
+  margin-top: 4rem;
 }
 
 /* Logo Slider End */
@@ -402,6 +382,17 @@ a:link {
   gap: 0.75rem;
 }
 
+.uslugi .slider-content p {
+  max-width: 120px;
+}
+
+.uslugi img {
+  width: 54px;
+  height: 102px;
+}
+
+
+
 /* Uslugi End*/
 
 /*Slick Slider */
@@ -508,10 +499,16 @@ a:link {
   line-height: 120%;
   /* or 24px */
   text-align: center;
-  max-width: 300;
+  max-width: 250px;
   color: #ffffff;
   container-type: inline-zize;
+}
 
+p .ourprocess-content .zaglavie {
+  margin-bottom: 0px !important;
+}
+.ourprocess p {
+  margin-bottom: 0;
 }
 
 .aboutus-text-container p {

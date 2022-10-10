@@ -4,18 +4,10 @@ import { urlFor, client } from "../pages/client";
 import { PortableText } from "@portabletext/react";
 import LastctaButton from "./buttons/LastctaButton";
 
-export default function LastCta() {
-    const [cta, setCta] = useState([]);
-
-    useEffect(() => {
-      const query = '*[_type == "cta"]';
-  
-      client.fetch(query).then((data) => setCta(data));
-    }, []);
-
+export default function LastCta({arg}) {
     return (
       <>
-        {cta.map((Cta, index) => (
+        {arg.cta_data?.map((Cta, index) => (
           <section key={index} className="lastcta__section">
             <div className="container">
               <div className="row">
