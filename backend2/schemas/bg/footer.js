@@ -7,7 +7,7 @@ export default {
             name: "title",
             title: "Загалвие (на български)",
             type: "array",
-            fields: [
+            of: [
                 {
                     type: "block"
                 }
@@ -17,7 +17,7 @@ export default {
             name: "title_en",
             title: "Загалвие (на английски)",
             type: "array",
-            fields: [
+            of: [
                 {
                     type: "block"
                 }
@@ -27,7 +27,7 @@ export default {
             name: "title_tr",
             title: "Загалвие (на турски)",
             type: "array",
-            fields: [
+            of: [
                 {
                     type: "block"
                 }
