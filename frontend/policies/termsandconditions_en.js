@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
-import { client } from "../client";
-import Footer_tr from "../../components/Footer_tr";
-import Navbar from "../../components/Navbar";
+import { client } from "../pages/client";
+import Footer_en from "../components/Footer_en";
+import Navbar from "../components/Navbar";
 
 export default function TermsAndConditions(props) {
     return (
@@ -13,14 +13,14 @@ export default function TermsAndConditions(props) {
                         <div className="policies">
                         {props.data?.map((Data, index) => 
                             <div key={index}>
-                                <PortableText value={Data.terms_tr}/>   
+                                <PortableText value={Data.terms_en}/>   
                             </div>                     
                         )}
                         </div>
                     </div>
                 </div>
             </div>
-        <Footer_tr />
+        <Footer_en />
         </>
     )
 }

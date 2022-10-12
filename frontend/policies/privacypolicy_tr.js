@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
-import { client } from "../client";
-import Footer_tr from "../../components/Footer_tr";
-import Navbar from "../../components/Navbar";
+import { client } from "../pages/client";
+import Footer_tr from "../components/Footer_tr";
+import Navbar from "../components/Navbar";
 
 export default function PrivacyPolicy(props) {
   return (

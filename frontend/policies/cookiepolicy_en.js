@@ -1,9 +1,9 @@
 import { PortableText } from "@portabletext/react";
-import { client } from "../client";
-import Footer_en from "../../components/Footer_en";
-import Navbar from "../../components/Navbar";
+import { client } from "../pages/client";
+import Footer_en from "../components/Footer_en";
+import Navbar from "../components/Navbar";
 
-export default function CancellationPolicy(props) {
+export default function CookiePolicy(props) {
   return (
     <>
       <Navbar />
@@ -13,7 +13,7 @@ export default function CancellationPolicy(props) {
             <div className="policies">
               {props.data?.map((Data, index) => 
                 <div key={index}>
-                  <PortableText value={Data.right_en} />
+                  <PortableText value={Data.cookie_en} />
                 </div>
               )}
             </div>
@@ -26,7 +26,7 @@ export default function CancellationPolicy(props) {
 }
 
 export async function getServerSideProps() {
-  const query = '*[_type == "cancellation_policy"]';
+  const query = '*[_type == "cookies_policy"]';
   const data = await client.fetch(query);
 
   return {
