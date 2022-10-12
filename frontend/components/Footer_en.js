@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
 import Link from "next/link";
 import biskvida from "../policies/cookiepolicy"
+import { PortableText } from "@portabletext/react";
+
 
 export default function Footer_en({args}) {
 
