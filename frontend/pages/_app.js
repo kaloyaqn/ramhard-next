@@ -1,9 +1,5 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
-import i18next from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import HttpApi from 'i18next-http-backend'
-import LanguageDetector from 'i18next-browser-languagedetector'
 
 //Styles Start
 import "../styles/globals.css";
@@ -14,8 +10,6 @@ import Script from "next/script";
 import "../styles/button.module.css";
 //Components Start
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 //Components End
 
 function MyApp({ Component, pageProps }) {
