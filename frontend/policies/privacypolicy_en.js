@@ -1,9 +1,18 @@
 import { PortableText } from "@portabletext/react";
-import { client } from "../pages/client";
+import { useEffect } from "react";
 import Footer_en from "../components/Footer_en";
 import Navbar from "../components/Navbar";
 
-export default function PrivacyPolicy(props) {
+export default function PrivacyPolicy() {
+
+  const [prop, setProp] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "privacy_policy"]';
+
+    client.fetch(query).then((data) => setProp(data));
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -11,7 +20,7 @@ export default function PrivacyPolicy(props) {
         <div className="row">
           <div className="col-md-12 col-sm-12 col-12 d-flex justify-content-center">
             <div className="policies">
-              {props.data?.map((Data, index) => 
+              {prop?.map((Data, index) => 
                 <div key={index}>
                   <PortableText value={Data.policy_en} />
                 </div>
@@ -23,15 +32,4 @@ export default function PrivacyPolicy(props) {
       <Footer_en />
     </>
   );
-}
-
-export async function getServerSideProps() {
-  const query = '*[_type == "privacy_policy"]';
-  const data = await client.fetch(query);
-
-  return {
-    props: {
-      data,
-    },
-  };
 }

@@ -1,9 +1,18 @@
 import { PortableText } from "@portabletext/react";
-import { client } from "../pages/client";
+import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-export default function CookiePolicy(props) {
+export default function CookiePolicy() {
+
+  const [prop, setProp] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "cookies_policy"]';
+
+    client.fetch(query).then((data) => setProp(data));
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -11,7 +20,7 @@ export default function CookiePolicy(props) {
         <div className="row">
           <div className="col-md-12 col-sm-12 col-12 d-flex justify-content-center">
             <div className="policies">
-              {props.data?.map((Data, index) => 
+              {prop?.map((Data, index) => 
                 <div key={index}>
                   <PortableText value={Data.cookie_bg} />
                 </div>
@@ -23,15 +32,4 @@ export default function CookiePolicy(props) {
       <Footer />
     </>
   );
-}
-
-export async function getServerSideProps() {
-  const query = '*[_type == "cookies_policy"]';
-  const data = await client.fetch(query);
-
-  return {
-    props: {
-      data,
-    },
-  };
 }
