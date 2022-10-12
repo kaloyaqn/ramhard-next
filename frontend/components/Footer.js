@@ -5,9 +5,10 @@ import { urlFor, client } from "../pages/client.js";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
 import Link from "next/link";
-import biskvida from "../pages/policies/cookiepolicy"
+import biskvida from "../policies/cookiepolicy"
+import { PortableText } from "@portabletext/react";
 
-export default function Footer() {
+export default function Footer({arg}) {
 
     return (
         <>
@@ -16,9 +17,11 @@ export default function Footer() {
 			<div class="row">
 				<div class="col-sm-3">
                     <h6>Ramhard</h6>
-					{/*sanity*/}<p>
-						Администриране на бизнес страници в социалните мрежи. Планиране, подготовка и публикуване на съдържание. Управление, оптимизиране и мониторинг на рекламни кампании.				
-					</p>
+					{arg.footer_data?.map((Foot, index) => 
+					<div key={index}>
+						<PortableText value={Foot.title}/>
+					</div>
+					)}
 				</div>
 				<div class="col-sm-1 d-flex justify-content-center align-items-center">
 					<div class="footer-divider"></div>

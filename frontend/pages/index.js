@@ -25,7 +25,7 @@ export default function Home(props) {
         <Faq arg={props.faq}/>
         <LastCta arg={props.cta}/>
         <Maps /> {/*tova*/}
-        <Footer />
+        <Footer arg={props.foot}/>
         </div>
     </>
   )
@@ -53,6 +53,9 @@ export async function getServerSideProps() {
   const cta_query = '*[_type == "cta"]';
   const cta_data = await client.fetch(cta_query);
 
+  const footer_query = '*[_type == "footer_query"]';
+  const footer_data = await client.fetch(footer_query);
+
   return {
     props: { 
       hero: {
@@ -75,6 +78,9 @@ export async function getServerSideProps() {
       },
       cta: {
         cta_data
+      },
+      foot: {
+        footer_data
       }
     },
   };

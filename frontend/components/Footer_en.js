@@ -5,9 +5,9 @@ import { urlFor, client } from "../pages/client.js";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
 import Link from "next/link";
-import biskvida from "../pages/policies/cookiepolicy"
+import biskvida from "../policies/cookiepolicy"
 
-export default function Footer_en() {
+export default function Footer_en({args}) {
 
     return (
         <>
@@ -16,8 +16,11 @@ export default function Footer_en() {
 			<div className="row">
 				<div className="col-sm-3">
                     <h6>Ramhard</h6>
-					{/*sanity*/}<p>
-                    Administration of business pages in social networks. Planning, preparing and publishing content. Management, optimization and monitoring of advertising campaigns.					</p>
+					{arg.footer_data?.map((Foot, index) => 
+					<div key={index}>
+						<PortableText value={Foot.title_en}/>
+					</div>
+					)}
 				</div>
 				<div className="col-sm-1 d-flex justify-content-center align-items-center">
 					<div className="footer-divider"></div>

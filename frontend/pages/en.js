@@ -18,7 +18,6 @@ import 'aos/dist/aos.css'
 import Footer_en from '../components/Footer_en'
 
 import styles from '../Buttons/buttons/AboutButton.module.css'
-import Footer_tr from "../components/Footer_tr";
 import Navbar_en from "../components/Navbar_en";
 
 export default function En(props) {
@@ -578,56 +577,63 @@ export default function En(props) {
         )}
 
         <Maps/>
-      <Footer_tr />
+      <Footer_en arg={props.foot}/>
       </>
     );
   }
 
-export async function getServerSideProps() {
-  const hero_query = '*[_type == "hero_title"]';
-  const hero_data = await client.fetch(hero_query);
-
-  const whyus_query = '*[_type == "whyus"]';
-  const whyus_data = await client.fetch(whyus_query);
-
-  const service_query = '*[_type == "services"]';
-  const service_data = await client.fetch(service_query);
-
-  const oproc_query = '*[_type == "ourprocess"]';
-  const oproc_data = await client.fetch(oproc_query);
-
-  const about_query = '*[_type == "aboutus"]';
-  const about_data = await client.fetch(about_query);
-
-  const faq_query = '*[_type == "faq"]';
-  const faq_data = await client.fetch(faq_query);
-
-  const cta_query = '*[_type == "cta"]';
-  const cta_data = await client.fetch(cta_query);
-
-  return {
-    props: { 
-      hero: {
-        hero_data
+  export async function getServerSideProps() {
+    const hero_query = '*[_type == "hero_title"]';
+    const hero_data = await client.fetch(hero_query);
+  
+    const whyus_query = '*[_type == "whyus"]';
+    const whyus_data = await client.fetch(whyus_query);
+  
+    const service_query = '*[_type == "services"]';
+    const service_data = await client.fetch(service_query);
+  
+    const oproc_query = '*[_type == "ourprocess"]';
+    const oproc_data = await client.fetch(oproc_query);
+  
+    const about_query = '*[_type == "aboutus"]';
+    const about_data = await client.fetch(about_query);
+  
+    const faq_query = '*[_type == "faq"]';
+    const faq_data = await client.fetch(faq_query);
+  
+    const cta_query = '*[_type == "cta"]';
+    const cta_data = await client.fetch(cta_query);
+  
+    const footer_query = '*[_type == "footer_query"]';
+    const footer_data = await client.fetch(footer_query);
+  
+    return {
+      props: { 
+        hero: {
+          hero_data
+        },
+        why: {
+          whyus_data
+        },
+        serv: {
+          service_data
+        },
+        proc: {
+          oproc_data
+        },
+        about: {
+          about_data
+        },
+        faq: {
+          faq_data
+        },
+        cta: {
+          cta_data
+        },
+        foot: {
+          footer_data
+        }
       },
-      why: {
-        whyus_data
-      },
-      serv: {
-        service_data
-      },
-      proc: {
-        oproc_data
-      },
-      about: {
-        about_data
-      },
-      faq: {
-        faq_data
-      },
-      cta: {
-        cta_data
-      }
-    },
-  };
-}
+    };
+  }
+  

@@ -5,9 +5,9 @@ import { urlFor, client } from "../pages/client";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
 import Link from "next/link";
-import biskvida from "../pages/policies/cookiepolicy_tr"
+import biskvida from "../policies/cookiepolicy_tr"
 
-export default function Footer_tr() {
+export default function Footer_tr({arg}) {
 
     return (
         <>
@@ -16,8 +16,11 @@ export default function Footer_tr() {
 			<div className="row">
 				<div className="col-sm-3">
                     <h6>Ramhard</h6>
-					{/*sanity*/}<p>
-                    Sosyal ağlarda iş sayfalarının yönetimi. İçerik planlama, hazırlama ve yayınlama. Reklam kampanyalarının yönetimi, optimizasyonu ve izlenmesi.					</p>
+					{arg.footer_data?.map((Foot, index) => 
+					<div key={index}>
+						<PortableText value={Foot.title_tr}/>
+					</div>
+					)}
 				</div>
 				<div className="col-sm-1 d-flex justify-content-center align-items-center">
 					<div className="footer-divider"></div>
