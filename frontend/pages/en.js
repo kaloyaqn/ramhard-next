@@ -114,7 +114,7 @@ export default function En(props) {
                      >
      
                        <h1 className="heading">
-                         We're helping to <span className="brand-span">repair </span>
+                         We&rsquo;re helping to <span className="brand-span">repair </span>
                          your smartphone or tablet
                        </h1>
                        <PortableText value={Htitle.Description_en} />
