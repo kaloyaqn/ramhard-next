@@ -11,7 +11,7 @@ export default function CancellationPolicy(props) {
         <div className="row">
           <div className="col-md-12 col-sm-12 col-12 d-flex justify-content-center">
             <div className="policies">
-              {props.data.map((Data, index) => 
+              {props.data?.map((Data, index) => 
                 <div key={index}>
                   <PortableText value={Data.right_en} />
                 </div>
