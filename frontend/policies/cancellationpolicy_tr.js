@@ -1,6 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import { useEffect } from "react";
-import {client} from '../pages/client'
+import {client} from '../pages/client';
 import Footer_tr from "../components/Footer_tr";
 import Navbar from "../components/Navbar";
 
