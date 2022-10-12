@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { urlFor, client } from "../pages/client";
 import React from "react";
 import Image from "next/image";
-import { PriButton } from "./buttons/Button";
-import { ButtonSec } from "./buttonSec/ButtonSec";
+import {PriButton} from "../Buttons/buttons/Button";
+import {ButtonSec}  from "../Buttons/buttonSec/ButtonSec";
 import facebook from "../Images/socials/facebook.svg";
 import tiktok from "../Images/socials/tiktok.svg";
 import Link from "next/link";
@@ -14,8 +14,7 @@ import { Variants } from "framer-motion";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-
-export default function Hero({arg}) {
+export default function Hero({arg}, props) {
 
   useEffect(() => {
     AOS.init({
@@ -25,8 +24,8 @@ export default function Hero({arg}) {
 
   return (
     <>      
-      {arg.hero_data.map((Htitle, index) => (
-        <section key={index} className="hero">
+      {arg.hero_data?.map((Htitle, index) => (
+        <section id="hero" key={index} className="hero">
           <div className="container">
             <div className="row">
               <div data-aos="fade-right" className="col-lg-7 col-md-12 col-12 hero-container">
@@ -36,7 +35,6 @@ export default function Hero({arg}) {
                   whileInView="onscreen"
                   viewport={{ once: true, amount: 0.8 }}               
                 >
-
                   <h1 className="heading">
                     Помагаме за <span className="brand-span">ремонта </span>
                     на вашия смартфон или таблет.
@@ -80,7 +78,6 @@ export default function Hero({arg}) {
                              whileTap={{ scale: 0.9 }}
                              transition={{ type: "spring", stiffness: 400, damping: 17 }}                           
                       >
-
                       <div className="socials">
                         <Image src={facebook} />
                         <span>Facebook</span>

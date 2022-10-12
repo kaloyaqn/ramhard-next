@@ -56,7 +56,7 @@ export default function Why({arg}) {
   return (
     <>
       {arg.whyus_data?.map((whyus, index) => (
-        <section key={index} className="why">
+        <section id="why" key={index} className="why">
           <div className="container">
             <div className="row">
               <div data-aos="fade-up" className="col-md-12 col-sm-12 col-12 text-center">

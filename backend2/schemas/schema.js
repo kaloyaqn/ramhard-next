@@ -12,6 +12,11 @@ import aboutus from './bg/aboutus.js'
 import faq from './bg/faq.js'
 import cta from './bg/cta.js'
 
+import privacy_policy from './bg/privacy_policy.js'
+import terms_and_conditions from './bg/terms_and_conditions.js'
+import cancellation_policy from './bg/cancellation_policy.js'
+import cookies_policy from './bg/cookies_policy.js'
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -19,6 +24,7 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    hero, whyus, services, aboutme, aboutus, faq, cta,     
+    hero, whyus, services, aboutme, aboutus, faq, cta,
+    privacy_policy, terms_and_conditions, cancellation_policy, cookies_policy,     
   ]),
 })

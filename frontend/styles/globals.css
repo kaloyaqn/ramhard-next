@@ -71,9 +71,49 @@ header {
   color: var(--ramhard-brand);
 }
 
+.dropdown-toggle:focus {
+  border: 0;
+  box-shadow: 0;
+}
+
+.dropdown-toggle:active {
+  border: 0;
+  box-sizing: 0;
+}
+
+.dropdown-toggle .show {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  width: 10px;
+}
+.dropdown-menu.show {
+  background: transparent;
+  border: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ul {
+  background: transparent;
+  background-color: transparent;
+  background-image: none;
+}
+
 .dropdown-menu {
-  background-image: url("http://www.bulgarianhistory.org/wp-content/uploads/2015/12/Paisiy1-300x300.jpg") !important;
+  width: 10px;
+  background: black;
+  background-color: transparent;
+  background-image: none;
   border: none;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+      position: absolute;
+      background: none;
+      border: 0;
+  }
 }
 
 .navbar .nav-item .nav-link {
@@ -230,10 +270,14 @@ a:link {
   margin: 0px 0;
 }
 .container .slider .logos .fab {
-  color: white;
   width: calc(100% / 11);
   animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
 }
+
+.fab {
+ color: white;
+}
+
 @keyframes slidein {
   from {
     transform: translate3d(0, 0, 0);
@@ -700,6 +744,11 @@ p .ourprocess-content .zaglavie {
   
 }
 
+.policies {
+  font-size: var(--font-size-lg);
+  color: white;
+}
+
 /* Last Cta End */
 
 /*Google Mpas Start */
@@ -730,6 +779,15 @@ footer h6 {
   color: #FFFFFF;
   
   
+}
+
+
+.footer-link {
+  color: #C5D1D9;
+}
+
+.footer-link:hover {
+  color: var(--ramhard-brand);
 }
 
 .footer-bottom-part {
@@ -789,6 +847,7 @@ footer .footer-divider {
 
 .footer-bottom-part
 {
+
 	margin-top:5rem;
 	border-top:1px solid #C5D1D9;
 	border-bottom:1px solid #C5D1D9;
@@ -799,6 +858,39 @@ footer .footer-divider {
 	align-items:center;
   font-family: 'Inter';
 }
+
+.footer-bottom-part div {
+
+}
+
+
+
+.footer-img-container {
+ display: flex;
+ gap:8px;
+}
+
+.madeby {
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins';
+  opacity: 0.5;
+}
+
+.madeby a {
+  font-weight: 500;
+  color: white;
+}
+
+.madeby a:hover {
+  color: white;
+}
+
+.invalid {
+  justify-content: flex-end;
+  gap: 0.5rem;  
+}
+
 
 .btn-flex-end
 {
@@ -1199,3 +1291,4 @@ footer .footer-divider {
     margin-bottom: 0;
   }
 }
+

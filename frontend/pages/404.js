@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Page404 from '../components/404Button'
-import { PriButton } from '../components/buttons/Button'
+import Page404 from '../Buttons/buttons/404Button'
+import PriButton from '../Buttons/buttons/Button'
 import Image from 'next/image'
-import {four0four} from '../public/static/novo404.png'
+import four0four from '../public/static/novo404.png'
 
 export default function FourOhFour(props) {
   return <>

@@ -18,23 +18,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 //Components End
 
-i18next
-  .use(HttpApi)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    supportedLngs: ['en', 'bg'],
-    fallbackLng: 'bg',
-    debug: false,
-    detection: {
-      order: ['path', 'cookie', 'htmlTag'],
-      caches: ['cookie'],
-    },
-    backend: {
-      loadPath: '/assets/locales/{{lng}}/translation.json',
-    },
-  })
-
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -44,15 +27,24 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></link>
-        <script src="https://kit.fontawesome.com/815c71d00c.js" crossorigin="anonymous"></script>
+        <link
+        rel="stylesheet"
+        type="text/css"
+        charset="UTF-8"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+      />
+        <script src="https://kit.fontawesome.com/815c71d00c.js" crossorigin="anonymous" async></script>
      
       </Head>
 
-      <Navbar /> {/*tova*/}
 
       <Component {...pageProps} />
 
-      <Footer /> {/*tova*/}
       <Script src="./components/Logos_script.js"></Script>
       <Script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></Script>
       <Script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></Script>

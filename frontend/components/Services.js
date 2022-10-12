@@ -74,7 +74,7 @@ export default function Mainservices({arg}) {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       {arg.service_data?.map((Services, index) => (
-      <section key={index} className="uslugi">
+      <section id="services" key={index} className="uslugi">
         <div className="container">
           <div className="row">
             <div data-aos="fade-up" className="col-md-12 col-12 text-center d-flex flex-column ulugi-text-container">

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor, client } from "../pages/client";
 import { PortableText } from "@portabletext/react";
-import LastctaButton from "./buttons/LastctaButton";
+import {LastctaButton} from "../Buttons/buttons/LastctaButton"
 
 export default function LastCta({arg}) {
     return (

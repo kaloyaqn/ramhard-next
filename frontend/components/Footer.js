@@ -1,8 +1,14 @@
 import tiktok from "../Images/socials/tiktok.svg"
 import facebook from "../Images/socials/facebook.svg"
-import { urlFor, client } from "../pages/client";
+import Image from "next/image.js";
+import { urlFor, client } from "../pages/client.js";
+import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
+import Link from "next/link";
+import biskvida from "../pages/policies/cookiepolicy"
 
 export default function Footer() {
+
     return (
         <>
 		<footer>
@@ -24,16 +30,16 @@ export default function Footer() {
 							<b>Важна информация</b>
 							<ul>
 								<li>
-                                    Политика за поверителност
+                                    <Link href="../policies/privacypolicy"><a className="footer-link">Политика за поверителност</a></Link>
 								</li>
 								<li>
-                                    Право на отказ
+									<Link href="../policies/cancellationpolicy"><a className="footer-link">Право на отказ</a></Link>
 								</li>
 								<li>
-                                    Правила и условия
+                                    <Link href="../policies/termsandconditions"><a className="footer-link">Правила и условия</a></Link>
 								</li>
 								<li>
-                                    Политика за бисквитки
+									<Link href="../policies/cookiepolicy"><a className="footer-link">Политика за бисквитки</a></Link>
 								</li>
 							</ul>
 						</div>
@@ -68,18 +74,55 @@ export default function Footer() {
 					</div>
 				</div>
 				<div class="col-sm-12">
-					<div class="footer-bottom-part">
-                    ©2022, Всички права са запазени.
-                    
-                    <div>
-                        <img src={tiktok} /> {/*sanity*/}
-                        <img src={facebook} />{/*sanity*/}
+					<div class="footer-bottom-part d-flex justfy-content-center">
+                
+					<div className="col-md-4 text-left">©2022, Всички права са запазени.</div>
+					<div className="col-md-4 text-center madeby">Изработка на уебсайт от&nbsp;
+						<a href="https://static.studio">Static Studio</a>
 					</div>
+					<div className="col-md-4 d-flex invalid justufy-content-end text-right">
+						<motion.div
+						whileHover={{scale:1.1}}
+						>
+							<Image className="footer-img" src={tiktok} /> 
+
+						</motion.div>
+
+						<motion.div
+						whileHover={{scale:1.1}}
+						>
+							<Image className="footer-img" src={facebook} />
+
+						</motion.div>
+
+					</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
+
+	
         </>
     )
 }
+
+/*
+                    <div className="footer-img-container">
+
+						<motion.div
+						whileHover={{scale:1.1}}
+						>
+							<Image className="footer-img" src={tiktok} /> 
+
+						</motion.div>
+
+						<motion.div
+						whileHover={{scale:1.1}}
+						>
+							<Image className="footer-img" src={facebook} />
+
+						</motion.div>
+
+					</div>  */

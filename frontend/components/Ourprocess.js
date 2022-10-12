@@ -15,7 +15,7 @@ export default function Ourprocess({arg}) {
   return (
     <>
       {arg.oproc_data?.map((oProcess, index) => (
-        <section key={index} className="ourprocess">
+        <section id="process" key={index} className="ourprocess">
           <div className="container">
             <div className="row">
               <div data-aos="fade-up" className="col-md-12 col-12 text-center d-flex flex-column section-text-container">

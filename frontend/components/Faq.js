@@ -15,23 +15,23 @@ export default function Faq({arg}) {
 
     return (
       <>
-      {arg.faq_data?.map((Faq, index) => (        
-        <section key={index} id="faq" class="faq">
-          <div class="container">
-            <div class="row">
-              <div data-aos="fade-down" class="col aos-init aos-animate">
+      {arg.faq_data?.map((Faq, index) =>       
+        <section key={index} id="faq" className="faq">
+          <div className="container">
+            <div className="row">
+              <div data-aos="fade-down" className="col aos-init aos-animate">
                 <h1>
                   Често задавани <br />
                   <span>въпроси</span>
                 </h1>
               </div>
             </div>
-            <div data-aos="fade-up" class="faq-container aos-init aos-animate">
-              <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
+            <div data-aos="fade-up" className="faq-container aos-init aos-animate">
+              <div className="accordion accordion-flush" id="accordionFlushExample">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingOne">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseOne"
@@ -43,19 +43,19 @@ export default function Faq({arg}) {
                   </h2>
                   <div
                     id="flush-collapseOne"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       <PortableText value={Faq.A_one}/>
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingTwo">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseTwo"
@@ -67,19 +67,19 @@ export default function Faq({arg}) {
                   </h2>
                   <div
                     id="flush-collapseTwo"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       <PortableText value={Faq.A_two}/>
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingThree">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseThree"
@@ -91,19 +91,19 @@ export default function Faq({arg}) {
                   </h2>
                   <div
                     id="flush-collapseThree"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingThree"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       <PortableText value={Faq.A_three}/>
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree1">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingThree1">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseThree1"
@@ -115,19 +115,19 @@ export default function Faq({arg}) {
                   </h2>
                   <div
                     id="flush-collapseThree1"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingThree1"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       <PortableText value={Faq.A_four}/>
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree2">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingThree2">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseThree2"
@@ -139,11 +139,11 @@ export default function Faq({arg}) {
                   </h2>
                   <div
                     id="flush-collapseThree2"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingThree2"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                        <PortableText value={Faq.A_five}/>
                     </div>
                   </div>
@@ -152,7 +152,7 @@ export default function Faq({arg}) {
             </div>
           </div>
         </section>
-        ))}
+        )}
       </>
     );
 }

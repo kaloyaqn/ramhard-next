@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor, client } from "../pages/client";
 import { PortableText } from "@portabletext/react";
-import { AboutButton } from "../components/buttons/AboutButton";
+import { AboutButton } from "../Buttons//buttons/AboutButton";
 import React from "react";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-import styles from './buttons/AboutButton.module.css'
+import styles from '../Buttons/buttons/AboutButton.module.css'
 
 export default function Aboutus({arg}) {
     const ReadMore = () => {
@@ -19,7 +19,7 @@ export default function Aboutus({arg}) {
 
       return(
         <>
-          {arg.about_data.map((About, index) => 
+          {arg.about_data?.map((About, index) => 
             <div key={index} className="text">
                 {isReadmore ? <PortableText value={About.About_desc}/> : <PortableText value={About.About_more}/> }
             </div>
@@ -47,7 +47,7 @@ export default function Aboutus({arg}) {
   return (
     <>
       {arg.about_data?.map((About, index) => (
-        <section key={index} className="aboutus">
+        <section id="about" key={index} className="aboutus">
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-12 section-text-container text-center d-flex flex-column aboutus-text-container">
