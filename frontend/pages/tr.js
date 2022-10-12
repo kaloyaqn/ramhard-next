@@ -578,7 +578,7 @@ export default function En(props) {
         )}
 
         <Maps/>
-        <Footer_tr />
+        <Footer_tr arg={props.footer_data}/>
       </>
     );
   }
@@ -605,6 +605,9 @@ export async function getServerSideProps() {
   const cta_query = '*[_type == "cta"]';
   const cta_data = await client.fetch(cta_query);
 
+  const footer_query = '*[_type == "footer_query"]';
+  const footer_data = await client.fetch(footer_query);
+
   return {
     props: { 
       hero: {
@@ -627,7 +630,8 @@ export async function getServerSideProps() {
       },
       cta: {
         cta_data
-      }
+      },
+      footer_data
     },
   };
 }

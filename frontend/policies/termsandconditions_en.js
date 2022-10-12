@@ -1,5 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import { useEffect } from "react";
+import {client} from "../pages/client";
 import Footer_en from "../components/Footer_en";
 import Navbar from "../components/Navbar";
 
@@ -11,6 +12,14 @@ export default function TermsAndConditions() {
       const query = '*[_type == "terms_and_conditions"]';
   
       client.fetch(query).then((data) => setProp(data));
+    }, []);
+
+    const [tmp, setTmp] = useState([]);
+
+    useEffect(() => {
+      const query = '*[_type == "footer_query"]';
+  
+      client.fetch(query).then((data) => setTmp(data));
     }, []);
 
     return (
@@ -29,7 +38,7 @@ export default function TermsAndConditions() {
                     </div>
                 </div>
             </div>
-        <Footer_en />
+        <Footer_en arg={tmp}/>
         </>
     )
 }

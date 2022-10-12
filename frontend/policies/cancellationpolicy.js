@@ -1,5 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import { useEffect } from "react";
+import {client} from "../pages/client"
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
@@ -11,6 +12,14 @@ export default function CancellationPolicy() {
     const query = '*[_type == "cancellation_policy"]';
 
     client.fetch(query).then((data) => setProp(data));
+  }, []);
+
+  const [tmp, setTmp] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "footer_query"]';
+
+    client.fetch(query).then((data) => setTmp(data));
   }, []);
 
   return (
@@ -29,7 +38,7 @@ export default function CancellationPolicy() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer arg={tmp}/>
     </>
   );
 }

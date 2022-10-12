@@ -17,7 +17,7 @@ export default function Footer({arg}) {
 			<div class="row">
 				<div class="col-sm-3">
                     <h6>Ramhard</h6>
-					{arg.footer_data?.map((Foot, index) => 
+					{arg?.map((Foot, index) => 
 					<div key={index}>
 						<PortableText value={Foot.title}/>
 					</div>

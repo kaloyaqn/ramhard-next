@@ -577,7 +577,7 @@ export default function En(props) {
         )}
 
         <Maps/>
-      <Footer_en arg={props.foot}/>
+      <Footer_en arg={props.footer_data}/>
       </>
     );
   }
@@ -630,9 +630,7 @@ export default function En(props) {
         cta: {
           cta_data
         },
-        foot: {
-          footer_data
-        }
+        footer_data        
       },
     };
   }

@@ -25,7 +25,7 @@ export default function Home(props) {
         <Faq arg={props.faq}/>
         <LastCta arg={props.cta}/>
         <Maps /> {/*tova*/}
-        <Footer arg={props.foot}/>
+        <Footer arg={props.footer_data}/>
         </div>
     </>
   )
@@ -79,9 +79,7 @@ export async function getServerSideProps() {
       cta: {
         cta_data
       },
-      foot: {
-        footer_data
-      }
+      footer_data
     },
   };
 }
