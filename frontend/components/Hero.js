@@ -36,8 +36,7 @@ export default function Hero({arg}, props) {
                   viewport={{ once: true, amount: 0.8 }}               
                 >
                   <h1 className="heading">
-                    Помагаме за <span className="brand-span">ремонта </span>
-                    на вашия смартфон или таблет.
+                  <span className="brand-span">Ремонт</span> на телефони и таблети с оригинални резервни части, батерии и протектори
                   </h1>
                   <PortableText value={Htitle.Description} />
 
